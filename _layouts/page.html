@@ -2,13 +2,26 @@
 layout: default
 ---
 <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+    <h1>{{ page.title | escape }}</h1>
+  
 
   <div class="post-content">
     {{ content }}
+
+    {% if page.listpost == true %}
+      <ul>
+        {% for post in site.posts %}
+        {% if post.categories contains page.listcategory %}
+          <li>
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}  
+              <a class="post-link" style="font-size:17px" href="{{ post.url | relative_url }}">{{ post.title}}  <span class="post-meta">({{ post.date | date: date_format }})</span></a>    
+          </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
   </div>
+
 
 </article>

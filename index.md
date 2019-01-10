@@ -1,9 +1,12 @@
 ---
-#
-# By default, content added below the "---" mark will appear in the home page
-# between the top bar and the list of recent posts.
-# To change the home page layout, edit the _layouts/home.html file.
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
 layout: home
 ---
+
+Hello, I'm Loka welcome to my blog
+
+I am a final year master student in Information Engineering at Hiroshima University. My future plan is to pursue a career in academia. In this blog you can find my academic notes and life journal. I usually write about Machine Learning, Image processing and anything that interest me.
+
+Enjoy!
