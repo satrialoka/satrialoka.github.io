@@ -2,7 +2,7 @@
 layout: post
 title:  "Jensen Inequality and Kullback-Leibler Divergence"
 date:   2018-11-6 22:13:44 +0700
-categories: notes
+categories: unpublished
 ---
 The first part of this post will try to explain what Jensen Inequality is and in the second part we will explore the Kullback-Leibler divergence and how it relates to Jensen Inequality. 
 
