@@ -7,6 +7,6 @@ layout: home
 
 Hello, I'm Loka welcome to my blog
 
-I am a final year master student in Information Engineering at Hiroshima University. My future plan is to pursue a career in academia. In this blog you can find my academic notes and life journal. I usually write about Machine Learning, Image processing and anything that interest me.
+I am a PhD student at [Ghent University](https://www.ugent.be/en), Belgium. Prior to my current position I was a master student at [Hiroshima University](https://www.hiroshima-u.ac.jp/en) in [Kurita Laboratory](https://kurita-lab.jp/wordpress/). My future plan is to pursue a career in academia. In this blog you can find my academic notes and life journal. I usually write about Machine Learning, Image processing and anything that interest me.
 
 Enjoy!

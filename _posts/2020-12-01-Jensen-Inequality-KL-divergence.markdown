@@ -4,9 +4,9 @@ title:  "Jensen Inequality and Kullback-Leibler Divergence"
 date:   2018-11-6 22:13:44 +0700
 categories: notes
 ---
-### Jensen Inequality
-To be able to understand the properties of Kullback-Leibler divergence, we must understand the Jensen Inequality theorem first. The first part of this post will try to explain what Jensen Inequality is and in the second part we will explore the Kullback-Leibler divergence and how it relates to Jensen Inequality. 
+The first part of this post will try to explain what Jensen Inequality is and in the second part we will explore the Kullback-Leibler divergence and how it relates to Jensen Inequality. 
 
+### Jensen Inequality
 Jensen Inequality is a inequality in mathematics which relates to concave/convex function. concave function is a function which line segment between any two points on the graph of the function lies below or on the graph. more formally we can write:}
 
 function $$f(x)$$ is concave if, if any $$a,b,\alpha$$ satisfies:
@@ -32,10 +32,41 @@ That's the case for 2 points, consider we have 3 points. if $$\alpha_1+\alpha_2+
 
 thus using the definition of [expectation](https://en.wikipedia.org/wiki/Expected_value) we can generalize above equation to (concave and convex respectively): 
 <center>
- $$ f(\mathbb{E}_{P(x)}x) \geq \mathbb{E}_{P(x)} f(x)$$ 
+$$ f(\mathbb{E}_{P(x)}x) \geq \mathbb{E}_{P(x)} f(x)$$ 
 $$ f(\mathbb{E}_{P(x)}x) \leq \mathbb{E}_{P(x)} f(x)$$ 
 </center>
 
 Thats it, Jensen Inequality is the generalized form of the statement that the secant line of a convex function lies above the graph of the function 
 
 ### Kullback Leibler Divergence
+
+Kullback Leibler (KL) divergence is used for measure probability distribution difference by taking expected value of the log ratio between $$q(x)$$ and $$p(x)$$. the formula of KL divergence is given by: 
+<div>
+$$
+\begin{aligned}
+   KL(q||p) &= \mathbb{E}_{q(x)} \log \frac{q(x)}{p(x)} \\
+   KL(q||p) &= \int q(x)\log \frac{q(x)}{p(x)}dx
+\end{aligned}
+$$
+</div>
+
+Properties :
+<div>
+$$
+\begin{aligned}
+\text{1. }KL(q(x)||p(x)) &\neq KL(p(x)||q(x))\text{(asymmetric)} \\
+\text{2. }KL(q(x)||q(x)) &= 0 \\
+\text{3. }KL(q(x)||p(x)) &\geq 0 \text {(non-negativity)}
+\end{aligned}
+$$
+</div>
+
+note that KL divergence is not simetrical because when we interchange $$q(x)$$ and $$p(x)$$ position it becomes different expression, thus it is called a divergence not a distance.
+
+
+<center>
+<img src="\assets\2020-12-01-Jensen-Inequality-KL-divergence\KL.png" width="900" height="300" />
+</center>
+
+
+
