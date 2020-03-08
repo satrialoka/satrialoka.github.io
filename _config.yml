@@ -20,6 +20,7 @@ email: satrialoka@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Views and/or opinions expressed in this site are my own
   and do not reflect the views of the institution i belong to.
+  This site is made using Jekyll with minima theme
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ratu_bagus
