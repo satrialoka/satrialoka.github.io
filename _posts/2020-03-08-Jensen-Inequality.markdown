@@ -17,7 +17,7 @@ and $ 0 \leq \alpha \leq 1$, also $$a,b \in X $$, $$X$$ is a concave set.
 
 contrarily, in a convex function the line segment between any two points is lies above or on the function so we only need to change the $$\geq$$ sign above to $$\leq$$.
 
-for example $$\log(x)$$ is a concave function, thus $$-\log(x)$$ is a convex function. The definition above can be visualized as follows:
+for example $$\log(x)$$ is a concave function, and $$-\log(x)$$ is a convex function. The definition above can be visualized as follows:
 
 <center>
 <img src="\assets\2020-12-01-Jensen-Inequality-KL-divergence\log_funct.png" width="500" height="350" />
