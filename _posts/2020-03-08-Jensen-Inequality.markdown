@@ -40,7 +40,8 @@ Thats it, Jensen Inequality is the generalized form of the statement that the se
 
 ### source
 [Wikipedia](https://en.wikipedia.org/wiki/Jensen%27s_inequality)
-[Coursera](https://www.coursera.org/learn/bayesian-methods-in-machine-learning/home/welcome)
+
+[Coursera - HSE bayesian methods in ML](https://www.coursera.org/learn/bayesian-methods-in-machine-learning/home/welcome)
 
 
 
