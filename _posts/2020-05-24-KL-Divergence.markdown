@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Kullback Leibler Divergence"
-date:   2020-5-21 22:13:44 +0700
+date:   2020-5-24 22:13:44 +0700
 categories: notes
 ---
 In this post we will explore the Kullback-Leibler divergence, its properties, and how it relates to [Jensen Inequality](https://satrialoka.github.io/notes/2020/03/07/Jensen-Inequality.html). 
