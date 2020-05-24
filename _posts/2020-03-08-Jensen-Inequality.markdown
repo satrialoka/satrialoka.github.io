@@ -20,8 +20,8 @@ contrarily, in a convex function the line segment between any two points is lies
 for example $$\log(x)$$ is a concave function, and $$-\log(x)$$ is a convex function. The definition above can be visualized as follows:
 
 <center>
-<img src="\assets\2020-12-01-Jensen-Inequality-KL-divergence\log_funct.png" width="500" height="350" />
-<img src="\assets\2020-12-01-Jensen-Inequality-KL-divergence\min_log_funct.png" width="500" height="350" />
+<img src="\assets\2020-03-08-Jensen-Inequality\log_funct.png" width="500" height="350" />
+<img src="\assets\2020-03-08-Jensen-Inequality\min_log_funct.png" width="500" height="350" />
 </center>
 That's the case for 2 points, consider we have 3 points. if $$\alpha_1+\alpha_2+\alpha_3 = 1$$ and $$\alpha_k \geq 0$$ and $$f(x)$$ is concave:
 
