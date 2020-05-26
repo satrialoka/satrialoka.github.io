@@ -91,7 +91,7 @@ $$
 $$
 </div>
 
-Because -KL is always negative, thus KL is always positive!
+Because -KL is always negative or equal to zero, thus KL is always positive!
 
 reference and further readings:
 
