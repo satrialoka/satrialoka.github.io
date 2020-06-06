@@ -3,6 +3,7 @@ layout: post
 title:  "Jensen Inequality"
 date:   2020-03-07 21:00:00 +0100
 categories: notes
+comments: true
 ---
 In this post I will try to explain what Jensen Inequality is and in the next post we will explore the Kullback-Leibler divergence and how it relates to Jensen Inequality. 
 
