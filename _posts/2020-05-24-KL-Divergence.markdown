@@ -14,7 +14,7 @@ $$
 \end{aligned}
 $$
 </div>
-why we need KL divergence? why don't we just use distance to measure its difference? using KL divergence can capture the better difference between the distribution.
+why we need KL divergence? why don't we just use distance to measure its difference? using KL divergence we can capture the better difference between the distribution.
 For example, look at this picture of distribution comparisons: 
 <center>
 <img src="\assets\2020-05-25-KL-Divergence\KL.png" width="900" height="300" />
@@ -91,7 +91,7 @@ $$
 $$
 </div>
 
-Because -KL is always negative, thus KL is always positive!
+Because -KL is always negative or equal to zero, thus KL is always positive!
 
 reference and further readings:
 
