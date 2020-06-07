@@ -21,7 +21,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Views and/or opinions expressed in this site are my own
   and do not reflect the views of the institution i belong to.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://satrialoka.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ratu_bagus
 github_username:  satrialoka
 
@@ -47,6 +47,6 @@ disqus:
     # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
     shortname: satrialoka
 
-url: https://satrialoka.github.io/
+#url: https://satrialoka.github.io/
 
 export JEKYLL_ENV=production
