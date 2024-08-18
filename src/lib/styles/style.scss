@@ -1,0 +1,188 @@
+/* Importing Font Awesome for icons */
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css";
+@import "prism.css";
+/* Define variables for colors, fonts, and sizes */
+$primary-color: #000000; // Black
+$secondary-color: #4a4a4a; // Dark Gray
+$background-color: #ffffff; // White
+$link-color: #333333; // Darker Gray for Links
+$link-hover-color: #989898; // Lighter Gray for Link Hover
+$footer-background-color: #f7f7f7; // Very Light Gray
+$footer-border-color: #e5e5e5; // Light Gray
+$header-background-color: #1a1a1a; // Almost Black
+$text-color: #000000; // Black
+$white-color: #ffffff; // White
+$social-link-color: #333333; // Dark Gray
+$social-link-hover-color: #1c1c1c; // Darker Gray
+
+/* Basic link style */
+a {
+  color: $link-color; /* Black text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease; /* Smooth transition for color */
+
+  /* On hover, change color and animate underline */
+  &:hover {
+    color: $link-hover-color; /* Change text color on hover (e.g., blue) */
+  }
+}
+
+/* Font sizes */
+$base-font-size: 1rem;
+$small-font-size: 0.85rem;
+$smaller-font-size: 0.625rem;
+$title-font-size: 1.25rem;
+$large-font-size: 1.5rem;
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+  color: $primary-color;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+main {
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 45rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+.post-meta {
+  font-size: $smaller-font-size; // Use rem for better scalability
+  color: $secondary-color;
+  margin: 0; /* Ensure there's no gap above */
+  padding: 0; /* Remove any padding */
+}
+
+.blog-post-link {
+  display: block; /* Ensure the link takes full width */
+  font-size: $title-font-size; /* Slightly larger for readability */
+  font-weight: bold; /* Bold for emphasis */
+  color: $primary-color; /* Define your primary link color */
+  text-decoration: none; /* Remove underline */
+  margin: 0; /* Remove bottom margin to eliminate gap */
+  padding: 0.25rem 0; /* Add padding for better click area */
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+/* Article styles */
+article {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; // Centers article in the container
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments for article */
+@media (max-width: 799px) {
+  article {
+    width: 100%;
+    padding: 0 1rem; // Add padding for smaller screens
+  }
+}
+
+/* Footer styles */
+footer {
+  flex-shrink: 0;
+  padding: 2rem;
+  background-color: $footer-background-color;
+  color: $primary-color;
+  text-align: center;
+  border-top: 1px solid $footer-border-color;
+  margin-top: auto;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+    color: $social-link-color;
+    font-size: $large-font-size;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $social-link-hover-color;
+    }
+
+    i {
+      font-size: $large-font-size; // Consistent icon sizing
+    }
+  }
+}
+
+p {
+  margin: 0.5rem 0;
+  font-size: $base-font-size;
+  color: $text-color;
+}
+
+/* Header styles */
+header {
+  background-color: $header-background-color;
+  padding: 1rem 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.blog-name {
+  font-size: $large-font-size;
+  color: $white-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: auto;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+/* Navigation styles */
+nav {
+  display: inline-block;
+
+  .nav-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    .nav-li {
+      margin: 0;
+      padding: 0;
+
+      .nav-a {
+        text-decoration: none;
+        color: $white-color;
+        font-size: $base-font-size;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+}
