@@ -1,4 +1,4 @@
-import{s,n as t}from"../chunks/scheduler.cnANAmfW.js";import{S as o,i as l,g as h,h as c,x as m,a as p,f as u}from"../chunks/index.8wAQd9os.js";function g(n){let e,i=`<h3>Hi welcome to my blog</h3> <p>I am a postdoctoral <a href="https://scholar.google.co.id/citations?user=bA9vjiAAAAAJ&amp;hl=en" target="_blank">researcher</a>
+import{s,n as t}from"../chunks/scheduler.qzY_7jFv.js";import{S as o,i as l,e as h,a as c,g as m,d as p,f as u}from"../chunks/index.DPHJD2rk.js";function g(n){let e,i=`<h3>Hi welcome to my blog</h3> <p>I am a postdoctoral <a href="https://scholar.google.co.id/citations?user=bA9vjiAAAAAJ&amp;hl=en" target="_blank">researcher</a>
       at <a href="https://www.helsinki.fi/en/researchgroups/machine-and-human-intelligence" target="_blank">The Machine and Human Intelligence research group</a> in the University of Helsinki Finland. 
       My work focuses on Bayesian optimization, deep learning, and amortized (inference) optimization.
       Previously, I pursued my PhD research in the <a href="https://sumo.ilabt.imec.be/home" target="_blank">SUMO group</a> at Ghent University in Belgium, 
