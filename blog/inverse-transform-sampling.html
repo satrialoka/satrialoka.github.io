@@ -1,24 +1,32 @@
 <!doctype html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<link rel="stylesheet" href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css"
+/>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="../favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link href="../_app/immutable/assets/0.cUfH7Z8Z.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.yzAYwpF5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.cnANAmfW.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.gWBSHtQQ.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.BYonzqmH.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.8wAQd9os.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.JmNkpJMZ.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.cPN8czyQ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/post.Kg0sUqJe.js">
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">     <header data-svelte-h="svelte-1ngnos"><div class="header-content"><a href="/" class="blog-name" aria-current="page">Loka&#39;s note</a> <nav aria-label="Main Navigation"><ul class="nav-ul"><li class="nav-li"><a class="nav-a" href="/blog">Blogs</a>  </li><li class="nav-li"><a class="nav-a" href="/about">About</a></li></ul></nav></div></header> <main>  <article><h1>Inverse Transform Sampling</h1> <p>Published: 2023-06-24</p> <p data-svelte-h="svelte-nxxxup">Inverse transform sampling is a basic method for pseudo-random number generation. It can be used for the generation of random samples from a non-uniform probability distribution, when its cumulative distribution function is known.</p> <p>The main idea of inverse transform sampling is quite simple. We want to sample from a non-uniform distribution by mapping a sampled point from a uniform distribution <span class="math math-inline"><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">U[0,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span><!-- HTML_TAG_END --></span>, to the inverse cumulative distribution function (CDF) of the non-uniform distribution. To understand how it works, let’s consider the exponential distribution as an example. This post will demonstrate how inverse transform sampling done programmatically using Python. Before we delve into the implementation, let’s first use an existing library to sample from the exponential distribution for comparison purposes. In this case, we will sample <span class="math math-inline"><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span><!-- HTML_TAG_END --></span> points from the exponential distribution using the Numpy library:</p> <pre class="language-py"><!-- HTML_TAG_START --><code class="language-py"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+		<link href="../_app/immutable/assets/0.BxR8ftnx.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.CfEM11aW.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.CeT7LwUS.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.qzY_7jFv.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.CSOx8jSv.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.DPHJD2rk.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.D9TVnZib.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.D2LoH4rk.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/post.CqBzDkip.js">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">     <header data-svelte-h="svelte-1ngnos"><div class="header-content"><a href="/" class="blog-name" aria-current="page">Loka&#39;s note</a> <nav aria-label="Main Navigation"><ul class="nav-ul"><li class="nav-li"><a class="nav-a" href="/blog">Blogs</a>  </li><li class="nav-li"><a class="nav-a" href="/about">About</a></li></ul></nav></div></header> <main>  <article><h1>Inverse Transform Sampling</h1> <p>Published: 2023-06-24</p> <p data-svelte-h="svelte-nxxxup">Inverse transform sampling is a basic method for pseudo-random number generation. It can be used for the generation of random samples from a non-uniform probability distribution, when its cumulative distribution function is known.</p> <p>The main idea of inverse transform sampling is quite simple. We want to sample from a non-uniform distribution by mapping a sampled point from a uniform distribution <span class="math math-inline"><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">U[0,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span><!-- HTML_TAG_END --></span>, to the inverse cumulative distribution function (CDF) of the non-uniform distribution. To understand how it works, let’s consider the exponential distribution as an example. This post will demonstrate how inverse transform sampling done programmatically using Python. Before we delve into the implementation, let’s first use an existing library to sample from the exponential distribution for comparison purposes. In this case, we will sample <span class="math math-inline"><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span><!-- HTML_TAG_END --></span> points from the exponential distribution using the Numpy library:</p> <pre class="language-py"><!-- HTML_TAG_START --><code class="language-py"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
 
 <span class="token comment"># sample from exponential distribution using numpy</span>
@@ -34,17 +42,17 @@ uniform_sample <span class="token operator">=</span> np<span class="token punctu
 <span class="token comment"># map the sampled points using inverse CDF of exponential distribution</span>
 inverse_transform_exponential <span class="token operator">=</span> exp_cdf_inv<span class="token punctuation">(</span>uniform_sample<span class="token punctuation">)</span>
 
-<span class="token comment"># plotting </span>
-sns<span class="token punctuation">.</span>displot<span class="token punctuation">(</span>inverse_transform_exponential<span class="token punctuation">,</span> kde<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> stat<span class="token operator">=</span><span class="token string">"density"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre> <center data-svelte-h="svelte-o6noi3"><img src="/images/post-images/inverse-transform-sampling/exp_inv_transform.png" width="80%" height="auto"></center> <p data-svelte-h="svelte-1c01yyw">As we can see from the picture above, we got very similar result compared to the Numpy’s implementation!</p> <p data-svelte-h="svelte-1tpbuz9">To better grasp the intuition of this inverse transform sampling,  Let’s visualize the mapping from the uniform points to the exponential distribution using the inverse CDF. In this case, we will examine the same evenly spaced points to observe how the distances between points are altered by the inverse CDF.</p> <pre class="language-py"><!-- HTML_TAG_START --><code class="language-py"><span class="token keyword">import</span> itertools
+<span class="token comment"># plotting</span>
+sns<span class="token punctuation">.</span>displot<span class="token punctuation">(</span>inverse_transform_exponential<span class="token punctuation">,</span> kde<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> stat<span class="token operator">=</span><span class="token string">"density"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre> <center data-svelte-h="svelte-o6noi3"><img src="/images/post-images/inverse-transform-sampling/exp_inv_transform.png" width="80%" height="auto"></center> <p data-svelte-h="svelte-1c01yyw">As we can see from the picture above, we got very similar result compared to the Numpy’s implementation!</p> <p data-svelte-h="svelte-1aoit0n">To better grasp the intuition of this inverse transform sampling, Let’s visualize the mapping from the uniform points to the exponential distribution using the inverse CDF. In this case, we will examine the same evenly spaced points to observe how the distances between points are altered by the inverse CDF.</p> <pre class="language-py"><!-- HTML_TAG_START --><code class="language-py"><span class="token keyword">import</span> itertools
 
 fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 n_points <span class="token operator">=</span> <span class="token number">10</span>
 
 ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>exp_cdf_inv<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>stem<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">,</span> exp_cdf_inv<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+ax<span class="token punctuation">.</span>stem<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">,</span> exp_cdf_inv<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 		linefmt<span class="token operator">=</span><span class="token string">"k--"</span><span class="token punctuation">,</span> orientation<span class="token operator">=</span><span class="token string">"horizontal"</span><span class="token punctuation">,</span> markerfmt<span class="token operator">=</span><span class="token string">"none"</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>stem<span class="token punctuation">(</span>exp_cdf_inv<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+ax<span class="token punctuation">.</span>stem<span class="token punctuation">(</span>exp_cdf_inv<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.99</span><span class="token punctuation">,</span>n_points<span class="token punctuation">)</span><span class="token punctuation">,</span>
 		linefmt<span class="token operator">=</span><span class="token string">"k--"</span><span class="token punctuation">,</span>markerfmt<span class="token operator">=</span><span class="token string">"none"</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">plot_rainbow</span><span class="token punctuation">(</span>xs<span class="token punctuation">,</span>ys<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -60,9 +68,8 @@ ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuati
 			
 			<script>
 				{
-					__sveltekit_5evfg2 = {
-						base: new URL("..", location).pathname.slice(0, -1),
-						env: null
+					__sveltekit_qcxnyy = {
+						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
@@ -70,8 +77,8 @@ ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuati
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.yzAYwpF5.js"),
-						import("../_app/immutable/entry/app.BYonzqmH.js")
+						import("../_app/immutable/entry/start.CfEM11aW.js"),
+						import("../_app/immutable/entry/app.CSOx8jSv.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
@@ -83,5 +90,5 @@ ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuati
 				}
 			</script>
 		</div>
-	</body>
+  </body>
 </html>
