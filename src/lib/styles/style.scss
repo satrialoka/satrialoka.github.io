@@ -186,3 +186,27 @@ nav {
     }
   }
 }
+
+.image-container {
+  max-width: 40%; /* Responsive width */
+  text-align: center;
+  border-radius: 10px; /* Slightly rounded corners */
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%; /* Image adapts to container */
+  border-radius: 10px; /* Slight rounding of the image */
+  display: block;
+}
+
+.content-container {
+  display: flex; /* Align items horizontally */
+  align-items: flex-start;
+  gap: 15px; /* Space between image and text */
+}
+
+.text-container {
+  font-size: 16px;
+  line-height: 1.5;
+}
