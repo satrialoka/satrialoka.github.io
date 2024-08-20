@@ -8,6 +8,6 @@
         <img src="images/loka-casual-pic.jpg" alt="Descriptive Alt Text">
     </div>
     <div class="text-container">
-        Hello, I'm Loka, a Postdoctoral Researcher in <a href="https://lacerbi.github.io/">Luigi Acerbi</a>'s Lab at the University of Helsinki, Finland. I occasionally write about machine learning and a variety of other interests on my <a href="/blog">blog</a>. For more information about my background and previous positions, please visit the <a href="/about">about</a> page.
+        Hello, I'm Loka, a Postdoctoral Researcher at the University of Helsinki, Finland. I occasionally write about machine learning and a variety of other interests on my <a href="/blog">blog</a> page. For more information about my background and previous positions, please see <a href="/about">about</a>.
     </div>
 </div>
