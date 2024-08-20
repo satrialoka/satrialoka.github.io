@@ -1,18 +1,8 @@
-# create-svelte
+# My personal/professional page
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This repository contains my attempt to build a personal website using [SvleteKit](https://kit.svelte.dev/). The site is developed following Josh Collinsworth's guide on [building static Markdown blog from scratch](https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog).
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Feel free to explore the code and setup details!
 
 ## Developing
 
@@ -23,6 +13,12 @@ npm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
+```
+
+Dont forget to run formatter using:
+
+```bash
+npx prettier . --write
 ```
 
 ## Building
