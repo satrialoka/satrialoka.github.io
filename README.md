@@ -23,7 +23,7 @@ npx prettier . --write
 
 ## Building
 
-To create a production version of your app:
+To create a production version of your app run the following:
 
 ```bash
 npm run build
