@@ -1,212 +1,226 @@
-/* Importing Font Awesome for icons */
+/* Importing external stylesheets */
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css";
 @import "prism.css";
-/* Define variables for colors, fonts, and sizes */
-$primary-color: #000000; // Black
-$secondary-color: #4a4a4a; // Dark Gray
-$background-color: #ffffff; // White
-$link-color: #333333; // Darker Gray for Links
-$link-hover-color: #989898; // Lighter Gray for Link Hover
-$footer-background-color: #f7f7f7; // Very Light Gray
-$footer-border-color: #e5e5e5; // Light Gray
-$header-background-color: #1a1a1a; // Almost Black
-$text-color: #000000; // Black
-$white-color: #ffffff; // White
-$social-link-color: #333333; // Dark Gray
-$social-link-hover-color: #1c1c1c; // Darker Gray
 
-/* Basic link style */
-a {
-  color: $link-color; /* Black text color */
-  text-decoration: none; /* Remove underline */
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease; /* Smooth transition for color */
+/* --------- Variables --------- */
+/* Colors */
+$color-primary: #000000; // Black
+$color-secondary: #4a4a4a; // Dark Gray
+$color-background: #ffffff; // White
+$color-link: #333333; // Darker Gray for Links
+$color-link-hover: #989898; // Lighter Gray for Link Hover
+$color-footer-bg: #f7f7f7; // Very Light Gray
+$color-footer-border: #e5e5e5; // Light Gray
+$color-header-bg: #1a1a1a; // Almost Black
+$color-text: $color-primary;
+$color-social-link: $color-link;
+$color-social-link-hover: #1c1c1c; // Darker Gray
 
-  /* On hover, change color and animate underline */
-  &:hover {
-    color: $link-hover-color; /* Change text color on hover (e.g., blue) */
-  }
-}
+/* Font Sizes */
+$font-size-base: 1rem;
+$font-size-small: 0.85rem;
+$font-size-smaller: 0.625rem;
+$font-size-title: 1.25rem;
+$font-size-large: 1.5rem;
 
-/* Font sizes */
-$base-font-size: 1rem;
-$small-font-size: 0.85rem;
-$smaller-font-size: 0.625rem;
-$title-font-size: 1.25rem;
-$large-font-size: 1.5rem;
+/* Spacing */
+$spacing-base: 1rem;
+$spacing-small: 0.5rem;
+$spacing-large: 2rem;
 
-/* Global styles */
+/* --------- Global Styles --------- */
 body {
   margin: 0;
   padding: 0;
-  background-color: $background-color;
-  color: $primary-color;
+  background-color: $color-background;
+  color: $color-text;
   font-family: "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Main content area */
+/* --------- Links --------- */
+a {
+  color: $color-link;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+/* --------- Lists --------- */
+ul {
+  list-style: square;
+  padding: 0.1%;
+  margin: 0.1%;
+}
+
+/* --------- Typography --------- */
+h3 {
+  margin-bottom: 0;
+}
+
+p {
+  margin: $spacing-small 0;
+  font-size: $font-size-base;
+  color: $color-text;
+}
+
+/* --------- Main Content --------- */
 main {
-  padding: 1rem;
-  margin: 2rem auto;
+  padding: $spacing-base;
+  margin: $spacing-large auto;
   max-width: 45rem;
   width: 100%;
   box-sizing: border-box;
   text-align: justify;
 }
 
+/* --------- Post Metadata --------- */
 .post-meta {
-  font-size: $smaller-font-size; // Use rem for better scalability
-  color: $secondary-color;
-  margin: 0; /* Ensure there's no gap above */
-  padding: 0; /* Remove any padding */
+  font-size: $font-size-smaller;
+  color: $color-secondary;
+  margin: 0;
+  padding: 0;
 }
 
+/* --------- Blog Post Links --------- */
 .blog-post-link {
-  display: block; /* Ensure the link takes full width */
-  font-size: $title-font-size; /* Slightly larger for readability */
-  font-weight: bold; /* Bold for emphasis */
-  color: $primary-color; /* Define your primary link color */
-  text-decoration: none; /* Remove underline */
-  margin: 0; /* Remove bottom margin to eliminate gap */
-  padding: 0.25rem 0; /* Add padding for better click area */
+  display: block;
+  font-size: $font-size-title;
+  font-weight: bold;
+  color: $color-primary;
+  text-decoration: none;
+  margin: 0;
+  padding: 0.25rem 0;
+
   &:hover {
-    color: $secondary-color;
+    color: $color-secondary;
   }
 }
 
-/* Article styles */
+/* --------- Articles --------- */
 article {
   max-width: 900px;
   width: 100%;
-  margin: 0 auto; // Centers article in the container
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Responsive adjustments for article */
 @media (max-width: 799px) {
   article {
-    width: 100%;
-    padding: 0 1rem; // Add padding for smaller screens
+    padding: 0 $spacing-base;
   }
 }
 
-/* Footer styles */
+/* --------- Footer --------- */
 footer {
   flex-shrink: 0;
-  padding: 2rem;
-  background-color: $footer-background-color;
-  color: $primary-color;
+  padding: $spacing-large;
+  background-color: $color-footer-bg;
+  color: $color-text;
   text-align: center;
-  border-top: 1px solid $footer-border-color;
+  border-top: 1px solid $color-footer-border;
   margin-top: auto;
+
+  .social-links {
+    margin-bottom: $spacing-base;
+
+    a {
+      text-decoration: none;
+      color: $color-social-link;
+      font-size: $font-size-large;
+      margin: 0 $spacing-base;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-social-link-hover;
+      }
+
+      i {
+        font-size: $font-size-large;
+      }
+    }
+  }
 }
 
-.social-links {
-  margin-bottom: 1rem;
+/* --------- Header --------- */
+header {
+  background-color: $color-header-bg;
+  padding: $spacing-base;
 
-  a {
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .blog-name {
+    font-size: $font-size-large;
+    color: $color-background;
     text-decoration: none;
-    color: $social-link-color;
-    font-size: $large-font-size;
-    margin: 0 1rem;
     transition: color 0.3s ease;
+    margin-right: auto;
 
     &:hover {
-      color: $social-link-hover-color;
-    }
-
-    i {
-      font-size: $large-font-size; // Consistent icon sizing
+      color: $color-link-hover;
     }
   }
 }
 
-p {
-  margin: 0.5rem 0;
-  font-size: $base-font-size;
-  color: $text-color;
-}
-
-/* Header styles */
-header {
-  background-color: $header-background-color;
-  padding: 1rem 1rem;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 700px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.blog-name {
-  font-size: $large-font-size;
-  color: $white-color;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  margin-right: auto;
-
-  &:hover {
-    color: $link-hover-color;
-  }
-}
-
-/* Navigation styles */
+/* --------- Navigation --------- */
 nav {
-  display: inline-block;
-
   .nav-ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: $spacing-large;
 
     .nav-li {
-      margin: 0;
-      padding: 0;
-
       .nav-a {
         text-decoration: none;
-        color: $white-color;
-        font-size: $base-font-size;
+        color: $color-background;
+        font-size: $font-size-base;
         transition: color 0.3s ease;
 
         &:hover {
-          color: $link-hover-color;
+          color: $color-link-hover;
         }
       }
     }
   }
 }
 
+/* --------- Images --------- */
 .image-container {
-  max-width: 40%; /* Responsive width */
+  max-width: 40%;
   text-align: center;
-  border-radius: 10px; /* Slightly rounded corners */
-  text-align: center;
+  border-radius: 10px;
+
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+  }
 }
 
-.image-container img {
-  max-width: 100%; /* Image adapts to container */
-  border-radius: 10px; /* Slight rounding of the image */
-  display: block;
-}
-
+/* --------- Content Layout --------- */
 .content-container {
-  display: flex; /* Align items horizontally */
+  display: flex;
   align-items: flex-start;
-  gap: 15px; /* Space between image and text */
+  gap: $spacing-small;
 }
 
 .text-container {
-  font-size: 16px;
+  font-size: $font-size-base;
   line-height: 1.5;
 }

@@ -10,7 +10,7 @@ My current technology setup, inspired by <a href="https://uses.tech/">uses.tech<
     <li>Mobile: iPad 2018, Google Pixel 8 Pro</li>
     <li>IO: Logitech G-pro Mouse, Xbox controller, Jabra Elite Active 75t</li>
 </ul>
-*provided by the university
+<sup>*provided by the university</sup>
 
 <h3>Development tools</h3>
 <ul>
