@@ -36,6 +36,7 @@ const config = {
       rehypePlugins: [rehypeKatexSvelte],
       layout: {
         blog: "src/routes/blog/post.svelte",
+        rawthoughts: "src/routes/rawthoughts/post.svelte",
       },
       alias: {
         js: "javascript",
