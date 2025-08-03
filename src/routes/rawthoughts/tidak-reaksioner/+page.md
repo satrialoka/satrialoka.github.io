@@ -10,4 +10,4 @@ Sudah berkali-kali saya mencoba untuk membuat blog pribadi. Mungkin blog ini men
 
 Paragraf diatas terkesan _fafifu_ dan serius sekali rupanya, padahal sebenarnya saya hanya ingin punya tempat berbagi pengalaman, uneg-uneg atau _shit posting_ saat lagi _spaneng_ saja. Akhir kata, selamat membaca!
 
-Ghent, 17 Agustus 2023.
+<p align="right">Ghent, 17 Agustus 2023.</p>
