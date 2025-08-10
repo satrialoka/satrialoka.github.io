@@ -7,7 +7,7 @@
 $color-primary: #000000; // Black
 $color-secondary: #4a4a4a; // Dark Gray
 $color-background: #ffffff; // White
-$color-link: #333333; // Darker Gray for Links
+$color-link: #2a6496; // Deep Teal for Links
 $color-link-hover: #989898; // Lighter Gray for Link Hover
 $color-footer-bg: #f7f7f7; // Very Light Gray
 $color-footer-border: #e5e5e5; // Light Gray
@@ -223,4 +223,78 @@ nav {
 .text-container {
   font-size: $font-size-base;
   line-height: 1.5;
+}
+
+/* --------- Home Page Styles --------- */
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-large;
+  margin-top: $spacing-large;
+}
+
+.home-image-container {
+  flex-shrink: 0;
+}
+
+.home-profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px; // Creates a square with rounded edges
+  object-fit: cover;
+}
+
+.home-text-container {
+  text-align: center;
+  max-width: 65ch; // Optimal line length for readability
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .font-light {
+    font-weight: 300;
+  }
+
+  .font-bold {
+    font-weight: 600;
+  }
+
+  p {
+    font-size: $font-size-base;
+    line-height: 1.7;
+    margin-bottom: $spacing-base;
+    text-align: justify;
+  }
+
+  a {
+    // Use global link styles for consistency
+    color: $color-link;
+    font-weight: 500;
+    
+    &:hover {
+      color: $color-link-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Responsive layout for wider screens */
+@media (min-width: 720px) {
+  .home-card {
+    flex-direction: row;
+    align-items: flex-start; // Top-align image with text
+    gap: 3.5rem; // Increase gap for better spacing
+  }
+
+  .home-text-container {
+    text-align: left;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
 }
