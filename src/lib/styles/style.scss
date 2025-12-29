@@ -81,6 +81,29 @@ main {
   text-align: justify;
 }
 
+/* --------- Homepage Portrait --------- */
+.content-container .portrait {
+  float: left;
+  width: min(180px, 32vw);
+  margin: 0.35rem 1.1rem 0.75rem 0;
+}
+
+.content-container .portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 720px) {
+  .content-container .portrait {
+    float: none;
+    margin: 0 auto 1rem;
+    width: min(200px, 65vw);
+  }
+}
+
 /* --------- Post Metadata --------- */
 .post-meta {
   font-size: $font-size-smaller;
@@ -274,7 +297,7 @@ nav {
     // Use global link styles for consistency
     color: $color-link;
     font-weight: 500;
-    
+
     &:hover {
       color: $color-link-hover;
       text-decoration: underline;

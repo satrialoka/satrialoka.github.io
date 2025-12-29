@@ -22,10 +22,11 @@
  * });
  */
 
-
 export const fetchMarkdownPosts = async () => {
   const blogFiles = import.meta.glob("/src/routes/blog/**/*.{md,mdx}");
-  const rawthoughtsFiles = import.meta.glob("/src/routes/rawthoughts/**/*.{md,mdx}");
+  const rawthoughtsFiles = import.meta.glob(
+    "/src/routes/rawthoughts/**/*.{md,mdx}",
+  );
   const allPostFiles = { ...blogFiles, ...rawthoughtsFiles };
   const iterablePostFiles = Object.entries(allPostFiles);
 

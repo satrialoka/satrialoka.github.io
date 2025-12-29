@@ -18,6 +18,6 @@
         <i class="fa-brands fa-bluesky"></i>
       </a>
     </div>
-    <p>&copy; 2025 Nasrulloh Loka.</p>
+    <p>&copy; 2026 Nasrulloh Loka.</p>
 </footer>
 
